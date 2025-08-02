@@ -22,10 +22,6 @@ Validation: Zod
 # ADMIN ACCESS
 For testing and administrative purposes, you can log in with the following admin credentials:
 
-Key
-
-Value
-
 Email: ekramul@gmail.com 
 Password: Ekramul@1995
 
