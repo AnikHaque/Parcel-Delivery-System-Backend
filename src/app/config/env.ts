@@ -30,9 +30,7 @@ const loadEnvailonment = (): envconfig => {
         JWT_ACCESS_SECRET:process.env.JWT_ACCESS_SECRET as string,
         BCRYPT_SALT_ROUND: process.env.BCRYPT_SALT_ROUND as string,
         EXPRESS_SESSION_SECRET: process.env.EXPRESS_SESSION_SECRET as string,
-        JWT_REFRESH_EXPIRES: process.env.JWT_REFRESH_EXPIRES as string
-         
-      
+        JWT_REFRESH_EXPIRES: process.env.JWT_REFRESH_EXPIRES as string 
     }
 }
 

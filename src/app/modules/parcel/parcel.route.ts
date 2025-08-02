@@ -13,7 +13,7 @@ import { createParcelZodSchema, updateParcelStatusZodSchema } from './parcel.val
 const router = express.Router();
 
 
-router.post("/", validateRequest(createParcelZodSchema), checkAuth(IUserRole.Admin),ParcelControllers.createParcel)
+router.post("/", validateRequest(createParcelZodSchema), checkAuth(IUserRole.Sender),ParcelControllers.createParcel)
 
 router.get("/all-parcels", checkAuth(IUserRole.Admin),ParcelControllers.getAllParcel)
 router.get("/my", checkAuth(IUserRole.Sender),ParcelControllers.getMyParcels)
