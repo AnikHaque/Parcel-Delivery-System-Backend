@@ -42,7 +42,7 @@ const loginUserService = (payload) => __awaiter(void 0, void 0, void 0, function
     const userTokens = (0, userToken_1.crateToken)(isUserAxist);
     const _a = isUserAxist.toObject(), { password: pass } = _a, rest = __rest(_a, ["password"]);
     return {
-        accesToken: userTokens.accesToken,
+        accesToken: userTokens.accessToken,
         user: rest
     };
 });

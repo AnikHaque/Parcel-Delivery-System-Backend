@@ -28,7 +28,7 @@ exports.createZodSchema = zod_1.default.object({
     address: zod_1.default.string()
         .max(200, { message: "Address cannot exceed 200 characters" })
         .optional(),
-    role: zod_1.default.enum([user_interface_1.IUserRole.Sender, user_interface_1.IUserRole.Receiver]).optional(),
+    role: zod_1.default.enum([user_interface_1.IUserRole.Admin, user_interface_1.IUserRole.Sender, user_interface_1.IUserRole.Receiver]).optional(),
 });
 exports.updateZodSchema = zod_1.default.object({
     name: zod_1.default.string()

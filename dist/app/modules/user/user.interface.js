@@ -12,22 +12,3 @@ var IUserStatus;
     IUserStatus["Active"] = "Active";
     IUserStatus["Blocked"] = "Blocked";
 })(IUserStatus || (exports.IUserStatus = IUserStatus = {}));
-// export interface IRegisteredUserResponse {
-//     _id: Types.ObjectId;
-//     name: string;
-//     email: string;
-//     role: IUserRole;
-//     status: IUserStatus;
-//     phone?: string;
-//     address?: string;
-//     createdAt: Date;
-//     updatedAt: Date;
-// }
-// export interface IUpdateUserPayload {
-//     name?: string;
-//     email?: string;
-//     phone?: string;
-//     address?: string;
-//     status?: IUserStatus;
-//     role?: IUserRole;
-// }

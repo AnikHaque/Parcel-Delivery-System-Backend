@@ -2,6 +2,7 @@
 
 class AppError extends Error {
     public statusCode: number;
+  errorSources: never[] | undefined;
 
     constructor(statusCode: number, message: string, stack = '') {
         super(message) // throw new Error("Something went wrong")

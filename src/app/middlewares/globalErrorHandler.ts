@@ -1,5 +1,4 @@
 import { Request, Response, NextFunction } from "express";
-
 import { handleCastError } from "../helpers/handleCastError";
 import { handlerZodError } from "../helpers/handlerZodError";
 import { handlerValidationError } from "../helpers/handlerValidationError";
@@ -24,7 +23,7 @@ export const globalErrorHandler = (
     const simplifiedError = handlerDuplicateError(err);
     statusCode = simplifiedError.statusCode;
     message = simplifiedError.message;
-    errorSources = simplifiedError.errorSources;
+    errorSources = simplifiedError.errorSources ?? [];
   }
 
   // CastError (e.g., invalid ObjectId)
@@ -32,6 +31,7 @@ export const globalErrorHandler = (
     const simplifiedError = handleCastError(err);
     statusCode = simplifiedError.statusCode;
     message = simplifiedError.message;
+    errorSources = simplifiedError.errorSources ?? [];
   }
 
   // Zod Validation Error
@@ -39,7 +39,7 @@ export const globalErrorHandler = (
     const simplifiedError = handlerZodError(err);
     statusCode = simplifiedError.statusCode;
     message = simplifiedError.message;
-    errorSources = simplifiedError.errorSources as TErrorSources[];
+    errorSources = simplifiedError.errorSources ?? [];
   }
 
   // Mongoose Validation Error
@@ -47,13 +47,14 @@ export const globalErrorHandler = (
     const simplifiedError = handlerValidationError(err);
     statusCode = simplifiedError.statusCode;
     message = simplifiedError.message;
-    errorSources = simplifiedError.errorSources as TErrorSources[];
+    errorSources = simplifiedError.errorSources ?? [];
   }
 
   // Custom AppError
   else if (err instanceof AppError) {
     statusCode = err.statusCode;
     message = err.message;
+    errorSources = err.errorSources ?? [];
   }
 
   // General JS Error

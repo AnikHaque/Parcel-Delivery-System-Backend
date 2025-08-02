@@ -29,7 +29,7 @@ const loginUserService = async (payload: Partial<IUser>) => {
 
   const { password:pass, ...rest } = isUserAxist.toObject()
   return {
-    accesToken: userTokens.accesToken,
+    accesToken: userTokens.accessToken,
     user: rest
 
   }

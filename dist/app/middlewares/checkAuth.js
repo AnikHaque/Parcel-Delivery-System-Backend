@@ -1,9 +1,4 @@
 "use strict";
-// import { NextFunction, Request, Response } from "express";
-// import { JwtPayload } from "jsonwebtoken";
-// import AppError from "../errorHelpers/AppError";
-// import { verifyToken } from "../utils/jwt";
-// import { envVars } from "../config/env";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
