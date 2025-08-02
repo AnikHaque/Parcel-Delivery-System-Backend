@@ -18,7 +18,6 @@ export const globalErrorHandler = (
   let statusCode = 500;
   let message = "Something went wrong!";
 
-  // Duplicate Key Error (e.g., unique email)
   if (err.code === 11000) {
     const simplifiedError = handlerDuplicateError(err);
     statusCode = simplifiedError.statusCode;
@@ -26,7 +25,7 @@ export const globalErrorHandler = (
     errorSources = simplifiedError.errorSources ?? [];
   }
 
-  // CastError (e.g., invalid ObjectId)
+
   else if (err.name === "CastError") {
     const simplifiedError = handleCastError(err);
     statusCode = simplifiedError.statusCode;
@@ -34,7 +33,7 @@ export const globalErrorHandler = (
     errorSources = simplifiedError.errorSources ?? [];
   }
 
-  // Zod Validation Error
+
   else if (err.name === "ZodError") {
     const simplifiedError = handlerZodError(err);
     statusCode = simplifiedError.statusCode;
@@ -42,7 +41,7 @@ export const globalErrorHandler = (
     errorSources = simplifiedError.errorSources ?? [];
   }
 
-  // Mongoose Validation Error
+
   else if (err.name === "ValidationError") {
     const simplifiedError = handlerValidationError(err);
     statusCode = simplifiedError.statusCode;
@@ -50,22 +49,22 @@ export const globalErrorHandler = (
     errorSources = simplifiedError.errorSources ?? [];
   }
 
-  // Custom AppError
+
   else if (err instanceof AppError) {
     statusCode = err.statusCode;
     message = err.message;
     errorSources = err.errorSources ?? [];
   }
 
-  // General JS Error
+
   else if (err instanceof Error) {
     message = err.message;
   }
 
-  // Optional: log to console
+
   console.error("🔥 Global Error Handler Caught:", err);
 
-  // Send error response
+
   res.status(statusCode).json({
     success: false,
     message,
