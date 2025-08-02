@@ -53,47 +53,47 @@ Key
 
 Value
 
-Email: azmiruddin05@gmail.com 
-Password: Azmir1@
+Email: ekramul@gmail.com 
+Password: Ekramul@1995
 
 # 🚀 API Documentation
 The base URL for our backend API is:
-https://parcel-delivery-system-nine.vercel.app/api/v1
+https://parcel-delivery-system-backend-mu.vercel.app
 
 # 🔐 Authentication Routes
-POST /auth/register: Register a new user (Sender/Receiver).
+POST api/v1/auth/register: Register a new user (Sender/Receiver).
 
-POST /auth/login: Log in a user.
+POST api/v1/auth/login: Log in a user.
 
-POST /auth/reset-password: Reset the password of the logged-in user.
+POST api/v1/auth/reset-password: Reset the password of the logged-in user.
 
 POST /auth/logout: Log out a user.
 
 # 📦 Parcel Routes
-POST /parcels: Create a new parcel. Access: Sender
+POST api/v1/parcels: Create a new parcel. Access: Sender
 
-GET /parcels: View the list of all parcels. Access: Admin
+GET api/v1/parcels: View the list of all parcels. Access: Admin
 
-GET /parcels/my: View all parcels sent by you. Access: Sender
+GET api/v1/parcels/my: View all parcels sent by you. Access: Sender
 
-GET /parcels/incoming: View all parcels addressed to you. Access: Receiver
+GET api/v1/parcels/incoming: View all parcels addressed to you. Access: Receiver
 
-PATCH /parcels/:id/cancel: Cancel a parcel (before delivery starts). Access: Sender
+PATCH api/v1/parcels/:id/cancel: Cancel a parcel (before delivery starts). Access: Sender
 
-PATCH /parcels/:id/status: Update a parcel's status. Access: Admin
+PATCH api/v1/parcels/:id/status: Update a parcel's status. Access: Admin
 
  # 🧑 User Routes
-POST /users/register: Register a new user (Sender/Receiver). Access: Public
+POST api/v1/users/register: Register a new user (Sender/Receiver). Access: Public
 
-GET /users/all-users: View the list of all users. Access: Admin
+GET api/v1/users/all-users: View the list of all users. Access: Admin
 
-GET /users/:id: Get a single user's details. Access: Any Authenticated
+GET api/v1/users/:id: Get a single user's details. Access: Any Authenticated
 
-PATCH /users/:id: Update a user's details. Access: Any Authenticated
+PATCH api/v1/users/:id: Update a user's details. Access: Any Authenticated
 
-PATCH /users/:id/status: Change a user's status (Active/Blocked). Access: Admin
+PATCH api/v1/users/:id/status: Change a user's status (Active/Blocked). Access: Admin
 
-DELETE /users/:id: Delete a user. Access: Admin
+DELETE api/v1/users/:id: Delete a user. Access: Admin
 
-# Testing and Demo
-All API endpoints for this project have been tested using Postman. A screen-recorded video will be provided to demonstrate all features, showcasing the complete functionality of the project.
+# Demo Video:
+https://drive.google.com/file/d/17q3AyWE4b4VoUp_o0DfPkbhdjAD-PqSc/view?usp=sharing
