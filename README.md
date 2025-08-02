@@ -41,7 +41,7 @@ POST api/v1/auth/logout: Log out a user.
 # Parcel Routes
 POST api/v1/parcels: Create a new parcel. Access: Sender
 
-GET api/v1/parcels: View the list of all parcels. Access: Admin
+GET api/v1/parcels/all-parcels: View the list of all parcels. Access: Admin
 
 GET api/v1/parcels/my: View all parcels sent by you. Access: Sender
 
